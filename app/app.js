@@ -10,7 +10,20 @@ Ember.MODEL_FACTORY_INJECTIONS = true;
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver
+  Resolver,
+  engines: {
+    externalAdmin: {
+      dependencies: {
+        services: [
+          { 'data-store': 'store' }
+        ],
+        externalRoutes: {
+          home: 'application',
+          blog: 'in-app-blog.posts'
+        }
+      }
+    }
+  }
 });
 
 loadInitializers(App, config.modulePrefix);

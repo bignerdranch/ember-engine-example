@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.mount('in-app-blog', {path: "blog"});
+  this.mount('external-admin', {path: "admin"});
 });
 
 export default Router;
